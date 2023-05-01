@@ -2,4 +2,15 @@
 @tailwind utilities;
 .card {
   @apply h-full w-full rounded-2xl shadow-xl transform flex-wrap bg-gray-50 p-2;
+  background-color: #d4e4ed;
+  background-image: radial-gradient(
+      at 56% 89%,
+      #d4e4ed 0,
+      hsla(26, 95%, 70%, 0) 50%
+    ),
+    radial-gradient(at 82% 72%, #ffffff 0, hsla(0, 0%, 86.14%, 0.19) 50%),
+    radial-gradient(at 12% 31%, #fff 0, #a6d2ff57 50%);
+    max-width: 350px;
+    padding: 20px;
+    gap: 10px;
 }

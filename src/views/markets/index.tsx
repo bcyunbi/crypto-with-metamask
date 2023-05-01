@@ -7,7 +7,7 @@ const Markets = () => {
     const list = response ? response : []
     if (loading) {
         return (
-            <div className="wrapper-container mt-8">
+            <div className="max-w-5xl mx-auto px-2 mt-8">
                 <Skeleton className="h-8 w-32" />
                 <Skeleton className="h-8 w-full mt-2" />
                 <Skeleton className="h-8 w-full mt-2" />
@@ -22,7 +22,7 @@ const Markets = () => {
 
     return (
         <section className="mt-8">
-            <h1 className="text-2xl mb-2">Markets</h1>
+            <div className='text-center font-semibold text-2xl py-2 underline text-neutral-700 tracking-wide decoration-sky-500/[.33] mb-2'>Markets</div>
             {response && list.map((coin: Coin) => <CoinSummary key={coin.id} coin={coin} />)}
         </section>
     )
