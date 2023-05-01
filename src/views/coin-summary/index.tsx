@@ -3,11 +3,10 @@ import { currencyFormat, percentFormat } from "@/utils/format";
 import { TrendingDown, TrendingUp } from "@/icon";
 import css from './index.module.scss'
 const CoinSummary: React.FC<CoinSummaryType> = ({ coin }) => {
-    console.log(coin);
     return (
         <Link href={{
             pathname: '/coins/[name]',
-            query: { name: coin.name },
+            query: { name: coin.name, id: coin.id },
         }
         }>
             <div className={`flex justify-between items-flex font-light p-3 rounded-md  hover:bg-gray-200 ${css.col}`}>
