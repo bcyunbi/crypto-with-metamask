@@ -1,0 +1,12 @@
+@tailwind components;
+@tailwind utilities;
+.col {
+  background-color: #ebe8e6b9;
+  margin-bottom: 10px;
+}
+.img {
+  min-width: 40px;
+  border-radius: 100%;
+  padding: 8px;
+  background-image: radial-gradient(at 56% 89%, #cfe4f0db 0, hsla(26, 95%, 70%, 0) 50%), radial-gradient(at 12% 31%, #fff 0, rgb(233 215 173 / 34%) 50%);
+}
