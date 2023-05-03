@@ -8,7 +8,7 @@ interface BackBtn {
 const BackBtn: React.FC<BackBtn> = ({ text = '' }) => {
     const router = useRouter();
     return <>
-        <div className='text-sky-600 text-md cursor-pointer flex items-center justify-start gap-2'
+        <div className='text-sky-500 text-md cursor-pointer flex items-center justify-start gap-2'
             onClick={() => {
                 router.back()
             }}><BackIcon />{text}</div>
