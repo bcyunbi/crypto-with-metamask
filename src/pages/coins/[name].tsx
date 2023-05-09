@@ -27,7 +27,7 @@ const CoinDetail: React.FC = () => {
     }, [id]);
 
     return (
-        <div className='my-6'>
+        <div className='my-6 max-w-3xl mx-auto'>
             <BackBtn text={'' + name} />
             <div className='my-6'>
                 {

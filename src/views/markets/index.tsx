@@ -32,7 +32,7 @@ const Markets = () => {
 
     if (loading) {
         return (
-            <div className="max-w-5xl mx-auto px-2 mt-8">
+            <div className="max-w-3xl mx-auto px-2 mt-8">
                 <div className='text-center font-semibold text-2xl py-2 underline text-neutral-700 tracking-wide decoration-sky-500/[.33] mb-2'>Markets</div>
                 <Skeleton className="h-8 w-32" />
                 <Skeleton className="h-8 w-full mt-2" />
@@ -47,7 +47,7 @@ const Markets = () => {
     }
 
     return (
-        <div className="mt-8" >
+        <div className="mt-8 max-w-3xl mx-auto" >
             <div className='text-center font-semibold text-2xl py-2 underline text-neutral-700 tracking-wide decoration-sky-500/[.33] mb-2'>Markets</div>
             <div className='p-3' style={{ height: '400px', overflowY: 'scroll' }} onScroll={handleScroll}>
                 {items && items.map((coin: Coin) => <CoinSummary key={coin.id} coin={coin} />)}

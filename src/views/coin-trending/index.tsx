@@ -5,12 +5,14 @@ const CoinTrending = (data: CoinsResponse) => {
   return (
     <>
       <div className='text-center font-semibold text-2xl py-2 underline text-neutral-700 tracking-wide decoration-sky-500/[.33]  mb-8'>Rank</div>
-      <Marquee speed={30}>
-        {coinsList.length > 0 && coinsList.map((coin: Coin) => {
-          const item = coin.item;
-          return <CoinInfo key={item.coin_id} item={item} />
-        })}
-      </Marquee>
+      <div className=' max-w-3xl mx-auto'>
+        <Marquee speed={30}>
+          {coinsList.length > 0 && coinsList.map((coin: Coin) => {
+            const item = coin.item;
+            return <CoinInfo key={item.coin_id} item={item} />
+          })}
+        </Marquee>
+      </div>
     </>
   );
 };
