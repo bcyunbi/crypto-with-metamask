@@ -18,4 +18,10 @@
 
 body {
   background-color: #f5f3f3;
+  background-image: url(../../public/bg.svg);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
 }

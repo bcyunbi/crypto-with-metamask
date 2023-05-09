@@ -9,7 +9,7 @@ const CoinSummary: React.FC<CoinSummaryType> = ({ coin }) => {
             query: { name: coin.name, id: coin.id },
         }
         }>
-            <div className={`flex justify-between items-flex font-light p-3 rounded-md  hover:bg-gray-200 ${css.col}`}>
+            <div className={`flex justify-between items-flex font-light p-3 rounded-md  hover:bg-sky-200/[.33] ${css.col}`}>
                 <div className="w-2/3 h-full flex items-center justify-start flex-row gap-2 flex-auto">
                     <CoinTitle coin={coin} />
                 </div>

@@ -4,7 +4,6 @@ import Markets from '@/views/markets';
 import Wallet from '@/views/wallet';
 const Home: React.FC = () => {
   const { response } = useAxios('search/trending');
-  console.log("response", response);
   const coins = response ? response['coins'] : []
   return (
     <>

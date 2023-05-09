@@ -49,7 +49,7 @@ const Markets = () => {
     return (
         <div className="mt-8" >
             <div className='text-center font-semibold text-2xl py-2 underline text-neutral-700 tracking-wide decoration-sky-500/[.33] mb-2'>Markets</div>
-            <div style={{ height: '350px', overflowY: 'scroll' }} onScroll={handleScroll}>
+            <div className='p-3' style={{ height: '400px', overflowY: 'scroll' }} onScroll={handleScroll}>
                 {items && items.map((coin: Coin) => <CoinSummary key={coin.id} coin={coin} />)}
             </div>
         </div>

@@ -17,7 +17,7 @@ const CoinTrending = (data: CoinsResponse) => {
 
 const CoinInfo: React.FC<Coin> = ({ item }) => {
   return (
-    <div className='flex items-center justify-start font-light border-solid border-b-2 border-zinc-200 hover:border-gray-300  gap-2 p-2 mx-2 cursor-default text-md text-zinc-700'>
+    <div className='flex items-center justify-start font-light border-solid border-b-2 border-sky-500/[.13] hover:border-sky-200  gap-2 p-2 mx-2 cursor-default text-md text-zinc-700'>
       <div className='bg-sky-200 text-zinc-700 rounded-full text-xs w-6 h-6 flex items-center justify-center'>{item.score + 1}</div>
       <div>{item.name}</div>
       <div className='w-10 h-10'><img src={item.small} alt={item.name} /></div>

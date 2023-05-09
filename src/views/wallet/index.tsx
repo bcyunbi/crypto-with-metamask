@@ -34,7 +34,6 @@ export default function Wallet() {
                 const web3Provider = new ethers.providers.Web3Provider(provider);
                 const signer = web3Provider.getSigner();
                 const address = await signer.getAddress() || '';
-                console.log('signer', signer);
                 setAddress(address)
                 const balance = await web3Provider.getBalance(address);
                 setBalance(ethers.utils.formatEther(balance))
@@ -42,6 +41,7 @@ export default function Wallet() {
                 setEns(ens)
                 setIsConnected(true);
             }
+            setError(null)
         } catch (error: any) {
             setError(error.message)
             console.log(error);
@@ -57,7 +57,7 @@ export default function Wallet() {
         setEns('')
     };
     return (
-        <div className=" md:mx-auto p-4 w-full h-full flex justify-center items-center gap-3 flex-col">
+        <div className="md:mx-auto p-4 w-full h-full flex justify-center items-center gap-5 flex-col relative">
             <Card active={isConnected} data={{
                 address: getSimpleAddress(address), balance: balance, ens: ens
             }} />
@@ -66,7 +66,7 @@ export default function Wallet() {
             ) : (
                 <Button text='Connect wallet' onClick={connectWallet} />
             )}
-            {error && <div>{error}</div>}
+            {error && <div className={css.error}>{error}</div>}
         </div>
     );
 }
@@ -82,10 +82,11 @@ const Card = ({ active, data }: {
     const { address, balance, ens } = data
     return <>
         <div className={`${css.card} ${active ? '' : 'blur'}`}>
-            <div> address::{address}</div>
-            <div> balance::{balance}</div>
-            <div> ens:{ens}</div>
-        </div></>
+            <div><span className={css.title}>ADDRESS: </span>{address}</div>
+            <div><span className={css.title}>BALANCE: </span>{balance}</div>
+            <div><span className={css.title}>ENS: </span>{ens}</div>
+        </div>
+    </>
 }
 const getSimpleAddress = (str: string) => {
     if (!str || str.length < 7) return str

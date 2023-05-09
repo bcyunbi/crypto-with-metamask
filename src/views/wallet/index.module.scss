@@ -1,7 +1,7 @@
 @tailwind components;
 @tailwind utilities;
 .card {
-  @apply h-full w-full rounded-2xl shadow-xl transform flex-wrap bg-gray-50 p-2;
+  @apply h-full w-full rounded-2xl shadow-xl transform flex-wrap bg-gray-50 p-2 text-sm text-sky-600 font-bold;
   background-color: #d4e4ed;
   background-image: radial-gradient(
       at 56% 89%,
@@ -10,7 +10,23 @@
     ),
     radial-gradient(at 82% 72%, #ffffff 0, hsla(0, 0%, 86.14%, 0.19) 50%),
     radial-gradient(at 12% 31%, #fff 0, #a6d2ff57 50%);
-    max-width: 350px;
-    padding: 20px;
-    gap: 10px;
+  max-width: 300px;
+  padding: 20px;
+  gap: 10px;
+  letter-spacing: 1px;
+  .title {
+    @apply text-zinc-500;
+    letter-spacing: 0px;
+  }
+}
+
+.error {
+  @apply rounded-lg bg-orange-200 text-zinc-600 text-xs p-2;
+  height: 100px;
+  opacity: 0.75;
+  position: absolute;
+  top: 20px;
+  width: 80%;
+  max-width: 320px;
+  text-align: center;
 }
