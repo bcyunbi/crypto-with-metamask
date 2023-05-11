@@ -6,6 +6,7 @@ export default function Document() {
       <Head>
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+        <title>Crypto | Yun Qu</title>
       </Head>
       <body>
         <Main />
