@@ -1,11 +1,13 @@
 import Skeleton from "@/components/skeleton";
 import CoinSummary from "@/views/coin-summary";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const Markets = () => {
     const [page, setPage] = useState(1);
     const [items, setItems] = useState([]);
     const [loading, setLoading] = useState(false);
+    const [scrollRecord, setScrollRecord] = useState(0);
+    const scrollRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         setLoading(true)
@@ -23,10 +25,17 @@ const Markets = () => {
         fetchData();
     }, [page]);
 
+    useEffect(() => {
+        if (scrollRef.current) {
+            scrollRef.current.scrollTop = scrollRecord;
+        }
+    }, [items]);
+
     const handleScroll = (event: { currentTarget: { scrollTop: any; clientHeight: any; scrollHeight: any; }; }) => {
         const { scrollTop, clientHeight, scrollHeight } = event.currentTarget;
         if (scrollTop + clientHeight === scrollHeight) {
             setPage((prevPage) => prevPage + 1);
+            setScrollRecord(scrollTop)
         }
     };
 
@@ -49,7 +58,7 @@ const Markets = () => {
     return (
         <div className="mt-8 max-w-3xl mx-auto" >
             <div className='text-center font-semibold text-2xl py-2 underline text-neutral-700 tracking-wide decoration-sky-500/[.33] mb-2'>Markets</div>
-            <div className='p-3' style={{ height: '400px', overflowY: 'scroll' }} onScroll={handleScroll}>
+            <div className='p-3' style={{ height: '400px', overflowY: 'scroll' }} onScroll={handleScroll} ref={scrollRef}>
                 {items && items.map((coin: Coin) => <CoinSummary key={coin.id} coin={coin} />)}
             </div>
         </div>
